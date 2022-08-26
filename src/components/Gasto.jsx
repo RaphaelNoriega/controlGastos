@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useState,useEffect } from 'react'
 import {
     LeadingActions,
     SwipeableList,
@@ -30,28 +30,29 @@ const diccionarioIconos ={
     suscribciones:IconoSuscripciones
 }
 
-const leadingActions = () => (
-    <LeadingActions>
-      <SwipeAction onClick={() => console.info('swipe action triggered')}>
-        Action name
-      </SwipeAction>
-    </LeadingActions>
-  );
-  
-  const trailingActions = () => (
-    <TrailingActions>
-      <SwipeAction
-        destructive={true}
-        onClick={() => console.info('swipe action triggered')}
-      >
-        Delete
-      </SwipeAction>
-    </TrailingActions>
-  );
 
-  
-const Gasto = ({gasto}) => {
+const Gasto = ({gasto,setGastoEditar,eliminarGasto}) => {
     const {categoria,nombre,cantidad,fecha,id} = gasto;
+
+    const leadingActions = () => (
+      <LeadingActions>
+        <SwipeAction onClick={() => setGastoEditar(gasto)}>
+          Action name
+        </SwipeAction>
+      </LeadingActions>
+    );
+    
+    const trailingActions = () => (
+      <TrailingActions>
+        <SwipeAction
+          destructive={true}
+          onClick={() => eliminarGasto(id)}
+        >
+          Delete
+        </SwipeAction>
+      </TrailingActions>
+    );
+
 
   return (
     <SwipeableList>
