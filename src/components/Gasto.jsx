@@ -60,7 +60,7 @@ const Gasto = ({gasto,setGastoEditar,eliminarGasto}) => {
         leadingActions={leadingActions()}
         trailingActions={trailingActions()}
         >
-        <div classNmae="gasto sombra">
+        <div className="gasto sombra">
             <div className='contenido-gasto'>
                 <img
                     src={diccionarioIconos[categoria]}

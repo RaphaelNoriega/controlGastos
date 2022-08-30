@@ -3,7 +3,7 @@ import { useState } from 'react'
 import NuevoPresupuesto from './NuevoPresupuesto'
 import ControlPresupuesto from './ControlPresupuesto'
 
-const Header =({presupuesto,setPresupuesto,isValidPresupuesto,setIsValidPresupuesto,gastos})=> {
+const Header =({presupuesto,setPresupuesto,isValidPresupuesto,setGastos,setIsValidPresupuesto,gastos})=> {
   const [count, setCount] = useState(0)
 
 
@@ -14,7 +14,10 @@ const Header =({presupuesto,setPresupuesto,isValidPresupuesto,setIsValidPresupue
           {isValidPresupuesto ? (
             <ControlPresupuesto
             gastos={gastos}
+            setGastos={setGastos}
             presupuesto={presupuesto}
+            setPresupuesto={setPresupuesto}
+            setIsValidPresupuesto={setIsValidPresupuesto}
             />
           ) : (
             <NuevoPresupuesto
